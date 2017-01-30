@@ -12,7 +12,7 @@
         })
         .state('album', {
           url: '/',
-          templateUrl: '/templates/landing.html'
+          templateUrl: '/templates/album.html'
         })
         .state('collection', {
           url: '/',
