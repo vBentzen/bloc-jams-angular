@@ -1,14 +1,14 @@
 /* General for landing page */
 
  body.landing {
-     background-color: rgb(58,23,63); 
+     background-color: rgb(58,23,63);
  }
 
 
 /* hero section */
 
 .hero-content {
-	position: relative; 
+	position: relative;
 	min-height: 600px;  /* hero content element must be atleast 600 pixels */
 	background-image: url(../assets/images/bloc_jams_bg.jpg);
 	background-repeat: no-repeat;
@@ -17,18 +17,18 @@
 }
 
 .hero-content .hero-title {
-  position: absolute;             
-	top: 40%;                      
+  position: absolute;
+	top: 40%;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 	width: 100%;                    /* makes sure the title inhabits the full width of its container */
-	text-align: center;             
-	font-size: 4rem;                
-	font-weight: 300;               
-	text-transform: uppercase;      
-	letter-spacing: 0.5rem;       
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
 	text-shadow: 1px 1px 0px rgb(58,23,63);  */
 }
 
@@ -43,16 +43,10 @@
 	position: relative;
 	padding: 2rem;
 	text-align: center;
-	opacity: 0;
+	opacity: 1;
 	-webkit-transform: scaleX(0.9) translate3d(-100%, 0, 0);
 		 -moz-transform: scaleX(0.9) translate3d(-100%, 0, 0);
           transform: scaleX(0.9) translate3d(-100%, 0, 0);
-	-webkit-transition: all 0.45s ease-out;
-  	 -moz-transition: all 0.45s ease-out;
-  				transition: all 0.45s ease-out;
-  -webkit-transition-delay: 0.1s;
-  	 -moz-transition-delay: 0.1s;
-  				transition-delay: 0.1s;
 }
 
 .point .point-title {
@@ -65,4 +59,3 @@
 	color: rgb(233,50,118);
 	font-size: 5rem;
 }
-
