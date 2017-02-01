@@ -43,9 +43,6 @@
 	padding: 2rem;
 	text-align: center;
 	opacity: 1;
-	-webkit-transform: scaleX(0.9) translate3d(-100%, 0, 0);
-		 -moz-transform: scaleX(0.9) translate3d(-100%, 0, 0);
-          transform: scaleX(0.9) translate3d(-100%, 0, 0);
 }
 
 .point .point-title {
