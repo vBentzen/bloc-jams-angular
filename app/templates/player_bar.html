@@ -4,8 +4,9 @@
       <a class="previous">
         <span class="ion-skip-backward"></span>
       </a>
-      <a class="play-pause">
-        <span class="ion-play"></span>
+      <a class="play-pause" ng-click="playing = !playing">
+        <span ng-show="!playing" class="ion-play"></span>
+        <span ng-show="playing" class="ion-pause"></span>
       </a>
       <a class="next">
         <span class="ion-skip-forward"></span>
