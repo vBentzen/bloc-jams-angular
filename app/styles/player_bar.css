@@ -48,7 +48,7 @@
 
 /*adding 3px padding to ion pause, as it is 3 px less wide than play btn */
 .ion-pause {
-  padding-right:3px;
+  padding-right:0.2499rem;
 }
 
 .player-bar .currently-playing {
