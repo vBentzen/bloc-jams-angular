@@ -46,6 +46,11 @@
   font-size: 1.6rem;
 }
 
+/*adding 3px padding to ion pause, as it is 3 px less wide than play btn */
+.ion-pause {
+  padding-right:3px;
+}
+
 .player-bar .currently-playing {
   width: 50%;
   text-align: center;
