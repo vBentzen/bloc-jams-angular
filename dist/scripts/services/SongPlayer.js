@@ -15,13 +15,21 @@
 
     /**
     * @function playSong
-    * @desc snippet of making currentBuzzObject.play and making song.playing = true
+    * @desc makes current song start playing
     * @param {Object} song
     */
     var playSong = function(song) {
       currentBuzzObject.play();
       song.playing = true;
     };
+    /**
+    * @function stopSong
+    * @desc Stops the current song
+    */
+    var stopSong = function(song) {
+      currentBuzzObject.stop()
+      SongPlayer.currentSong.playing = null;
+    }
 
     /**
     * @function setSong
@@ -30,8 +38,7 @@
     */
     var setSong = function(song) {
       if (currentBuzzObject) {
-        currentBuzzObject.stop();
-        SongPlayer.currentSong.playing = null;
+        stopSong(song);
       } else if (SongPlayer.currentSong === song) {
           if (currentBuzzObject.isPaused()) {
             playSong(song);
@@ -95,8 +102,24 @@
       currentSongIndex--;
 
       if (currentSongIndex < 0) {
-        currentBuzzObject.stop();
-        SongPlayer.currentSong.playing = null;
+        stopSong();
+      } else {
+        var song = currentAlbum.songs[currentSongIndex];
+        setSong(song);
+        playSong(song);
+      }
+    };
+
+    /**
+    * @function next
+    * @desc skip to next song
+    */
+    SongPlayer.next = function() {
+      var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+      currentSongIndex++;
+
+      if (currentSongIndex > 5) { // look into this. should be if bigger than songslist.length
+        stopSong();
       } else {
         var song = currentAlbum.songs[currentSongIndex];
         setSong(song);
@@ -104,6 +127,10 @@
       }
 
     };
+
+
+
+
 
 
 
