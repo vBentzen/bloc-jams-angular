@@ -62,6 +62,7 @@
       return currentAlbum.songs.indexOf(song);
     };
 
+
     /**
     * @desc create intitial state of song object from list of songs
     * @type {Object}
