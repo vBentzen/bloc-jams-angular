@@ -68,6 +68,11 @@
       return currentAlbum.songs.indexOf(song);
     };
 
+    /**
+    * @desc Current volume value (1-100) of currently playing song
+    * @type {Number}
+    */
+    SongPlayer.volume = 50;
 
     /**
     * @desc create intitial state of song object from list of songs
@@ -148,6 +153,17 @@
     SongPlayer.setCurrentTime = function(time) {
       if (currentBuzzObject) {
         currentBuzzObject.setTime(time);
+      }
+    };
+
+    /**
+    * @function setVolume
+    * @desc Set current volume (1-100) of currently playing song
+    * @param {Number} volume
+    */
+    SongPlayer.setVolume = function(volume) {
+      if (currentBuzzObject) {
+        currentBuzzObject.setVolume(volume);
       }
     };
 
