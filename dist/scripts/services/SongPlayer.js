@@ -50,11 +50,19 @@
         preload: true
       });
 
-      currentBuzzObject.bind('timeupdate', function functionName() {
-        $rootScope.$apply(function functionName() {
+      currentBuzzObject.bind('timeupdate', function() {
+        $rootScope.$apply(function() {
           SongPlayer.currentTime = currentBuzzObject.getTime();
         });
       });
+
+
+      currentBuzzObject.bind('volumeUpdate', function() {
+        $rootScope.$apply(function() {
+          SongPlayer.currentVolume = currentBuzzObject.getVolume();
+        });
+      });
+
 
       SongPlayer.currentSong = song;
     };
@@ -72,7 +80,7 @@
     * @desc Current volume value (1-100) of currently playing song
     * @type {Number}
     */
-    SongPlayer.volume = 50;
+    SongPlayer.currentVolume = 50;
 
     /**
     * @desc create intitial state of song object from list of songs
@@ -95,8 +103,9 @@
       song = song || SongPlayer.currentSong;
       if (SongPlayer.currentSong !== song) {
         setSong(song);
-        playSong(song);
       }
+
+      playSong(song);
     };
 
     /**
@@ -135,7 +144,7 @@
       var currentSongIndex = getSongIndex(SongPlayer.currentSong);
       currentSongIndex++;
 
-      if (currentSongIndex > 5) { // look into this. should be if bigger than songslist.length
+      if (currentSongIndex === currentAlbum.songs.length) { // look into this. should be if bigger than songslist.length
         stopSong();
       } else {
         var song = currentAlbum.songs[currentSongIndex];
@@ -161,7 +170,7 @@
     * @desc Set current volume (1-100) of currently playing song
     * @param {Number} volume
     */
-    SongPlayer.setVolume = function(volume) {
+    SongPlayer.setCurrentVolume = function(volume) {
       if (currentBuzzObject) {
         currentBuzzObject.setVolume(volume);
       }
